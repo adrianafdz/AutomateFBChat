@@ -15,9 +15,9 @@ import random
 
 
 def send_message(lista):
-	# mi username y pass
-	username = "adriana.fernandezlopez.1"
-	paswd = "ideaPad1197!$("
+	# username and pass
+	username = ""
+	paswd = ""
 
 	# selecciona mensaje al azar
 	sel_msg = lista[random.randint(0, len(MENSAJES)-1)]
@@ -25,11 +25,10 @@ def send_message(lista):
 	# log in
 	client = fbchat.Client(username, paswd)
 
-	# uid de Ramiro
-	# que saqué del url de su conversacion
-	rami_uid="100009879074235"
+	# got this from the chat's URL
+	friend_uid=""
 
-	sent = client.sendMessage(sel_msg, thread_id=rami_uid)
+	sent = client.sendMessage(sel_msg, thread_id=friend_uid)
 
 	if sent: 
 		print("Message sent successfully!")
